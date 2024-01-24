@@ -48,6 +48,9 @@ contract PersonalInfo{
 
     /*******************************Getter Functions for personal info*****************************/
 
+    // In solidity, a default get function can also be used, by declaring the state variable as public
+    //but this method is not preferred because of security risks
+    
     //getter for name
     function getName() public view returns(string memory) {
         return name;
