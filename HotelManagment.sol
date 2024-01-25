@@ -49,9 +49,12 @@ contract HotelManagement{
         return true;
     }
 
-    function getResidentFlat(address addr) public view returns (uint) {
+    function getResidentDetails(address addr) public view returns (string memory, address, uint, uint64) {
       
         require (Residents[addr].status == Status.resident, "Resident does not exist!");
-        return Residents[addr].flat_No;
+        return (Residents[addr].name,
+                Residents[addr].wallet_Address,
+                Residents[addr].flat_No,
+                Residents[addr].cnic);
     }
 }
